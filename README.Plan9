@@ -1,0 +1,10 @@
+This is a "spoon" of suckless.org sbase for building sbase for Plan9 (APE).
+The purpose is to provide some more "unixy" utilities for APE that will be 
+able to handle certain configure scripts better than the ones currently
+on Plan9.
+
+
+Building is easy.
+Just do "mk install"
+
+I have enabled the targets that build in the mkfile_bin

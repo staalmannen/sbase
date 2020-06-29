@@ -1,0 +1,53 @@
+</$objtype/mkfile
+LIB=libutil.a$O
+OFILES=\
+	concat.$O\
+	cp.$O\
+	crypt.$O\
+	ealloc.$O\
+	enmasse.$O\
+	eprintf.$O\
+	eregcomp.$O\
+	estrtod.$O\
+	fnck.$O\
+	fshut.$O\
+	getlines.$O\
+	human.$O\
+	linecmp.$O\
+	md5.$O\
+	memmem.$O\
+	mkdirp.$O\
+	mode.$O\
+	parseoffset.$O\
+	putword.$O\
+	reallocarray.$O\
+	recurse.$O\
+	rm.$O\
+	sha1.$O\
+	sha224.$O\
+	sha256.$O\
+	sha384.$O\
+	sha512.$O\
+	sha512-224.$O\
+	sha512-256.$O\
+	strcasestr.$O\
+	strlcat.$O\
+	strlcpy.$O\
+	strsep.$O\
+	strtonum.$O\
+	unescape.$O\
+	writeall.$O
+
+
+HFILES=../util.h
+
+
+</sys/src/cmd/mklib
+
+CC=pcc
+LD=pcc
+CFLAGS=-c -I. -I.. -B -D_POSIX_SOURCE -D_SUSV2_SOURCE 
+
+nuke:V:
+	mk clean
+	rm -f $LIB

@@ -1,25 +1,28 @@
 </$objtype/mkfile
-
-DIRS=libutil libutf
+DIRS=libutf libutil 
 
 all:V:
 	for (i in $DIRS)
 		@{ cd $i; mk }
-		mk -f mkfile_bin
+	mk -f mkfile.bins $target
 
 install:V:
 	for (i in $DIRS)
-		@{ cd $i; mk $target }
-		mk -f mkfile_bin $target
+		@{ cd $i; mk}
+	mk -f mkfile.bins installall
+
+installall:V:
+	for (i in $DIRS)
+		@{ cd $i; mk}
+	mk -f mkfile.bins $target
 
 clean:V:
 	for (i in $DIRS)
 		@{ cd $i; mk $target }
-		mk -f mkfile_bin $target
+	mk -f mkfile.bins $target
 
 nuke:V:
 	for (i in $DIRS)
 		@{ cd $i; mk $target }
-		mk -f mkfile_bin $target
-
+	mk -f mkfile.bins $target
 

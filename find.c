@@ -869,7 +869,8 @@ parse(int argc, char **argv)
 	 * if there was an expression but no -print, -exec, or -ok, add -a -print
 	 * in rpn, not infix */
 	if (gflags.print)
-		*out++ = (struct tok){ .u.pinfo = find_primary("-print"), .type = PRIM };
+		*out++->u.pinfo = *find_primary("-print");
+		/* *out++->type = PRIM; */
 	if (gflags.print == 2)
 		*out++ = and;
 
@@ -1053,8 +1054,8 @@ main(int argc, char **argv)
 	if ((argmax = sysconf(_SC_ARG_MAX)) == (size_t)-1)
 		argmax = _POSIX_ARG_MAX;
 
-	if (clock_gettime(CLOCK_REALTIME, &start) < 0)
-		weprintf("clock_gettime() failed:");
+/*	if (clock_gettime(CLOCK_REALTIME, &start) < 0)
+		weprintf("clock_gettime() failed:"); */
 
 	while (npaths--)
 		find(*paths++, NULL);

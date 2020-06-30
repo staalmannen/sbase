@@ -130,8 +130,8 @@ main(int argc, char *argv[])
 		ref = EARGF(usage());
 		if (stat(ref, &st) < 0)
 			eprintf("stat '%s':", ref);
-		times[0] = st.st_atim;
-		times[1] = st.st_mtim;
+		times[0] = _atim;
+		times[1] = _mtim;
 		break;
 	case 'T':
 		times[0].tv_sec = estrtonum(EARGF(usage()), 0, LLONG_MAX);

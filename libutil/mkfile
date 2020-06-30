@@ -3,7 +3,7 @@ LIB=../libsbase_util$O.a
 OFILES=concat.$O cp.$O crypt.$O ealloc.$O enmasse.$O eprintf.$O eregcomp.$O estrtod.$O \
 	fnck.$O fshut.$O getlines.$O human.$O md5.$O mkdirp.$O mode.$O putword.$O \
 	reallocarray.$O recurse.$O rm.$O sha1.$O sha256.$O sha512.$O strcasestr.$O \
-	strlcat.$O strlcpy.$O strsep.$O strtonum.$O unescape.$O stubs.$O
+	strlcat.$O strlcpy.$O strsep.$O strtonum.$O unescape.$O stubs.$O basename.$O dirname.$O
 
 HFILES=../util.h ../compat.h ../arg.h 
 

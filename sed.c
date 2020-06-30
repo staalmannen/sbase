@@ -1727,7 +1727,10 @@ main(int argc, char *argv[])
 	/* shrink/grow memory to fit and add our last instruction */
 	resize((void **)&prog, &pcap, sizeof(*prog), pc - prog + 1, NULL);
 	pc = prog + pcap - 1;
-	pc->fninfo = &(Fninfo){ cmd_last, NULL, NULL, 0 };
+	pc->fninfo->fn = cmd_last;
+	pc->fninfo->getarg = NULL;
+	pc->fninfo->freearg = NULL;
+	pc->fninfo->naddr = 0;
 
 	files = argv;
 	run();
